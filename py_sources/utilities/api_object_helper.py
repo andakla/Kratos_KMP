@@ -4,7 +4,7 @@ from os import path
 import os
 from core.helpers import logger
 
-apiFolder = "../"+os.path.dirname(os.path.abspath(__file__)) + "/api_resources/api_data"
+apiFolder = os.path.dirname(os.path.abspath(__file__)) +"/../"+ "/api_resources/api_data"
     
 def load_data_for_apis(self):
     APIFile = "%s/%s.json" % (apiFolder, type(self).__name__)
