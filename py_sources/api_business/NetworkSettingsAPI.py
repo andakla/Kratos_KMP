@@ -23,7 +23,8 @@ class NetworkSettingsAPI():
         self._response=""
          
     def get_list_network_configuration(self, token):
-        self._response = self.client.get(self._basePath, headers= token)
+        hearder= {'Authorization':'Bearer %s' %token}
+        self._response = self.client.get(self._basePath, headers= hearder)
         logger.info("respond json: " + json.dumps(self._response.json()))
         return self._response    
     
