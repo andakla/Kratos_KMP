@@ -20,7 +20,7 @@ Test case 1 View all the Network Configuration
     
     Status Should Be    200    ${resp}   
     
-    Verify Response By Json    ${DataTest}
+    Verify Response By Json    ${resp}    ${DataTest}
     
 
 # Test case 2 Update 1st Network Configuration -hostname
