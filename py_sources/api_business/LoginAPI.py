@@ -23,5 +23,5 @@ class LoginAPI():
         userload = 'user=%s&password=%s' % (username, password)
         print(userload)
         res= self.client.post("/rest/Token", data=userload)
-        logger.info("api_business.ACCESS_TOKEN: %s", json.dump(res.json()))
+#         logger.info("api_business.ACCESS_TOKEN: %s", json.dump(res.json()))
         return res.json()

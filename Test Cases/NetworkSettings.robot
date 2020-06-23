@@ -12,7 +12,8 @@ ${DataTest}    Data/test/ListNetworkSetting.json
 Test case 1 View all the Network Configuration
     
     log to console   ${username}
-    ${token}    login    ${username}    ${password}        
+    ${token}    login    ${username}    ${password}
+     
     ${resp}    Get List Network Configuration    ${token} 
     
     Log To Console  logrepo${resp}       
