@@ -44,6 +44,7 @@ Test case 2 Update 1st Network Configuration -hostname
     
     Status Should Be    200    ${respUpdate}    
     
-    ${content}    Convert To Json    ${respUpdate}
+    ${content}    To Json    ${respUpdate.content}
     
     Element Should Exist    ${content}    .hostName:contains("MN300-125-78")
+    [Teardown]    Update Network Configuration Hostname    0    MN300-125-77    ${token}
