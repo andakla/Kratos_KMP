@@ -8,6 +8,7 @@
     <referencedLibrary type="PYTHON" name="urllib3" path="C:/Python38-32/Lib/site-packages/urllib3/__init__.py" dynamic="false"/>
     <referencedLibrary type="PYTHON" name="NetworkSettingsAPI" path="Kratos_KMP/py_sources/api_business/NetworkSettingsAPI.py" dynamic="false"/>
     <referencedLibrary type="PYTHON" name="LoginAPI" path="Kratos_KMP/py_sources/api_business/LoginAPI.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="JsonValidator" path="C:/Python37/Lib/site-packages/JsonValidator.py" dynamic="false"/>
     <pythonpath>
         <path location="py_sources"/>
     </pythonpath>
