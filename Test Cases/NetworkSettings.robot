@@ -15,7 +15,7 @@ Test case 1 View all the Network Configuration
     ${password}  set variable  ${pass}
     log to console   ${username}
     ${token}    login    ${username}    ${password}        
-    ${resp}    Get List Network configuration    ${token} 
+    ${resp}    Get List Network Configuration    ${token} 
     Log To Console  logrepo${resp}       
     
     Status Should Be    200    ${resp}   
