@@ -23,17 +23,17 @@ Test case 1 View all the Network Configuration
     Verify Response By Json    ${resp}    ${DataTest}
     
 
-# Test case 2 Update 1st Network Configuration -hostname
+Test case 2 Update 1st Network Configuration -hostname
+    log to console   ${username}
+    ${token}    login    ${username}    ${password}
+    
+    ${resp}    Update Network Configuration Hostname    0    MN300-125-78    ${token}
+    Log To Console  logrepo${resp}       
+    
+    Status Should Be    200    ${resp}    
 
-    # ${resp}    Update Network Configuration Hostname    0    MN300-125-78
-    # Log To Console  logrepo${resp}       
+    ${respUpdate}    Get Network configuration     0    ${token} 
     
-    # Status Should Be    200    ${resp}    
+    Status Should Be    200    ${respUpdate}    
     
-    # Sleep    5s    
-
-    # ${respUpdate}    Get Network configuration     0 
-    
-    # Status Should Be    200    ${respUpdate}    
-    
-    # Verify Network Configuration Information    /Configuration/NetworkSettings/0    MN300-125-78
+    Verify Response By Json    ${respUpdate}    ${DataTest}

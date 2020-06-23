@@ -32,3 +32,18 @@ class NetworkSettingsAPI():
         if self._response:
             b_compare=utilities.compare_json(self, src_json.json(), expected_json)
             Assert.should_be_true(b_compare)
+    
+    def update_network_configuration_hostname(self,number, hostname,token):
+        req_data = { "hostName": hostname}
+        req_data = json.dumps(req_data)
+        hearders= {'Authorization':'Bearer %s' %token, 'Content-Type': 'application/json'}
+        logger.info("Request data: " + req_data)
+        self._response = self.client.put(self._basePath +"/"+ number, headers=hearders, data=req_data)
+        logger.info("respond json updated: " + json.dumps(self._response.json()))
+        return self._response
+    
+    def get_network_configuration(self,id_nw, token):
+        hearder= {'Authorization':'Bearer %s' %token}
+        self._response = self.client.get(self._basePath +"/"+ id_nw, headers=hearder)
+        logger.info("respond json: " + json.dumps(self._response.json()))
+        return self._response 
