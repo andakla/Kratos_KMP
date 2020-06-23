@@ -1,0 +1,4 @@
+{
+  "LoginAPI":"/rest/Token",
+  "NetworkSettingsAPI":"/rest/Configuration/NetworkSettings"
+}
