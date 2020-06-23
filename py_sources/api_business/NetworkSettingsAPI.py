@@ -30,6 +30,7 @@ class NetworkSettingsAPI():
     
     def verify_response_by_json(self,src_json, expected_json):
         if self._response:
+            logger.info("respond src_json: " + json.dumps(src_json.json()))
             b_compare=utilities.compare_json(self, src_json.json(), expected_json)
             Assert.should_be_true(b_compare)
     
