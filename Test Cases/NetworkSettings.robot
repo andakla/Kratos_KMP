@@ -4,16 +4,15 @@ Library    ../py_sources/api_business/LoginAPI.py
 Library    RequestsLibrary    
 Resource    ../ResourceFiles/BussinessKeywords/init.robot
 
-
-Suite Teardown    Run Keyword    Update Network Configuration Hostname    0    MN300-125-77
+Suite Setup    initialize
 
 *** Variables ***
 ${DataTest}    Data/test/ListNetworkSetting.json
 *** Test Cases ***   
 Test case 1 View all the Network Configuration
     
-    ${username}  set variable  ${credential}[user]
-    ${password}  set variable  ${credential}[pass]
+    ${username}  set variable  ${user}
+    ${password}  set variable  ${pass}
     log to console   ${username}
     ${token}    login    ${username}    ${password}        
     ${resp}    Get List Network configuration    ${token} 

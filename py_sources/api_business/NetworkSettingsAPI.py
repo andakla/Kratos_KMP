@@ -27,9 +27,9 @@ class NetworkSettingsAPI():
         return self._response    
      
     
-    def verify_response_by_json(self, expected_json):
+    def verify_response_by_json(self,src_json, expected_json):
         if self._response:
-            b_compare=utilities.compare_json(self, self._response.json(), expected_json)
+            b_compare=utilities.compare_json(self, src_json, expected_json)
             Assert.should_be_true(b_compare)
     
     def verify_response_by_node_path(self, expected_json):
@@ -51,19 +51,19 @@ class NetworkSettingsAPI():
             logger.info("src" +json.dumps(src))
             logger.info("b_compare" +str(b_compare))
             Assert.should_be_true(b_compare)
-    def compare_json_node(self, node):
-            src={"uri": "/server/server/0",
-                 "data":{
-                           "ip": "192.168.1.1",
-                           "name": "localhost"
-                           
-                        }
-                }
-            
-            b_compare= utilities.compare_json_by_node_path(self, src, node)
-            logger.info("src" +json.dumps(src))
-            logger.info("node" +str(b_compare))
-            Assert.should_be_true(b_compare)                  
+#     def compare_json_node(self, node):
+#             src={"uri": "/server/server/0",
+#                  "data":{
+#                            "ip": "192.168.1.1",
+#                            "name": "localhost"
+#                            
+#                         }
+#                 }
+#             
+#             b_compare= utilities.compare_json_by_node_path(self, src, node)
+#             logger.info("src" +json.dumps(src))
+#             logger.info("node" +str(b_compare))
+#             Assert.should_be_true(b_compare)                  
     def update_network_configuration_hostname(self,number, hostname):
         req_data = { "hostName": hostname}
         req_data = json.dumps(req_data)
